@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: reactweb
+  name: reactweb
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: reactweb
+  template:
+    metadata:
+      labels:
+        app: reactweb
+    spec:
+      containers:
+      - image: premsvmm/reactweb:033aed9696145ad6e8387d9e87f5f7cd3462ea64
+        imagePullPolicy: IfNotPresent
+        name: reactweb
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
