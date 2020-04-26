@@ -1,11 +1,10 @@
 FROM node:8 as react-build
 WORKDIR /app
-COPY . ./
+COPY package*.json ./
+COPY . .
 RUN yarn
 RUN yarn build
 
-# Stage 2 - the production environment
-FROM nginx:alpine
-COPY — from=react-build /app/build /usr/share/nginx/html
+FROM nginx
 EXPOSE 80
-CMD [“nginx”, “-g”, “daemon off;”]
+COPY --from=react-build /app/build /usr/share/nginx/html
