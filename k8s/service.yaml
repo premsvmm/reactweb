@@ -9,9 +9,9 @@ spec:
   externalTrafficPolicy: Cluster
   ports:
     - nodePort: 30205
-      port: 3000
+      port: 80
       protocol: TCP
-      targetPort: 3000
+      targetPort: 80
   selector:
     app: reactweb
   type: LoadBalancer

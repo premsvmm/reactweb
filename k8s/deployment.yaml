@@ -15,7 +15,7 @@ spec:
         app: reactweb
     spec:
       containers:
-      - image: premsvmm/reactweb:033aed9696145ad6e8387d9e87f5f7cd3462ea64
+      - image: premsvmm/reactweb:323ddd533d49e882854e5bcb90a8e4da2f9a2892
         imagePullPolicy: IfNotPresent
         name: reactweb
         resources: {}
