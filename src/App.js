@@ -5,7 +5,7 @@ import './App.css';
 function App() {
 const [hostname,setHostname]=useState(null);
 useEffect(()=>{
-  fetch("http://webinar.com/hostname")
+  fetch("http://goapi.com/hostname")
   .then(data=>data.json())
   .then(data=>{
     setHostname(data.host_name)
